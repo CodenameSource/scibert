@@ -45,10 +45,10 @@ class ClassificationDatasetReader(DatasetReader):
 
     @overrides
     def text_to_instance(self,
-                         text: str,
+                         text_tokens,
                          label: str = None,
                          metadata: Any = None) -> Instance:  # type: ignore
-        text_tokens = self._tokenizer.tokenize(text)
+        #text_tokens = self._tokenizer.tokenize(text)
         fields = {
             'text': TextField(text_tokens, self._token_indexers),
         }
